@@ -14,3 +14,26 @@ struct Color {
 
 	private init() {}
 }
+
+
+//based on https://www.sitepoint.com/store-uicolor-with-userdefaults-in-swift-3/
+extension UserDefaults {
+	
+	func colorForKey(key: String) -> NSColor? {
+		var color: NSColor?
+		if let colorData = data(forKey: key) {
+			color = NSKeyedUnarchiver.unarchiveObject(with: colorData) as? NSColor
+		}
+		return color ?? NSColor.clear
+	}
+	
+	func setColor(color: NSColor?, forKey key: String) {
+		var colorData: NSData?
+		if let color = color {
+			colorData = NSKeyedArchiver.archivedData(withRootObject: color) as NSData?
+		}
+		set(colorData, forKey: key)
+	}
+
+
+}

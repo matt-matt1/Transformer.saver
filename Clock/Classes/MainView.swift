@@ -98,10 +98,10 @@ final class MainView: ScreenSaverView {
 //		clockView = view
 //	}
 	@objc private func preferencesDidChange(_ notification: NSNotification?) {
-		let preferences = (notification?.object as? Prefs) ?? Prefs()
-		let view = preferences.model.init(frame: bounds)
-		view.styleName = preferences.styleName
-		myView = view
+//		let preferences = (notification?.object as? Prefs) ?? Prefs()
+//		let view = preferences.model.init(frame: bounds)
+//		view.styleName = preferences.styleName
+//		myView = view
 	}
 
 

@@ -18,6 +18,7 @@ final class OptionsWindowController: NSWindowController {
 	@IBOutlet weak var defaultOverrideColorScheme: NSTextField!
 	@IBOutlet weak var labelWARNING: NSTextField!
 	@IBOutlet weak var btnOK: NSButton!
+	@IBOutlet weak var tabView: NSTabView!
 	//	@IBOutlet weak var stylePopUpButton: NSPopUpButton!
 	//background
 	@IBOutlet weak var labelBackgroundColor: NSTextField!
@@ -130,6 +131,10 @@ final class OptionsWindowController: NSWindowController {
 
 	//actions
 	@IBAction func popupOverrideColorSchemeAction(_ sender: Any) {
+		// TODO: disable tabview if not "custom"
+//		tabView.ena.tabViewItems.forEach { (item) in
+//			item.view.ena
+//		}
 	}
 	//background
 	@IBAction func wellBackgroundColorAction(_ sender: Any) {

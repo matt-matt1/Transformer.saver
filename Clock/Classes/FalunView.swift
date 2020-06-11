@@ -13,7 +13,7 @@ class FalunView: NSView {
 	
 	// MARK: - Properties
 	
-	class var modelName: String {
+	class var schemeName: String {
 		fatalError("Unimplemented")
 	}
 	
@@ -80,16 +80,16 @@ class FalunView: NSView {
 		style.backgroundColor.setFill()
 		NSBezierPath.fill(bounds)
 		
-		drawFaceBackground()
-		drawTicks()
-		drawNumbers()
+//		drawFaceBackground()
+//		drawTicks()
+//		drawNumbers()
+//
+//		if drawsLogo {
+//			drawLogo()
+//		}
 		
-		if drawsLogo {
-			drawLogo()
-		}
-		
-		drawComplications()
-		drawHands()
+//		drawComplications()
+//		drawHands()
 	}
 	
 	// MARK: - Configuration
@@ -110,7 +110,7 @@ class FalunView: NSView {
 	}
 	
 	// MARK: - Drawing Hooks
-	
+	/*
 	func drawTicks() {
 		drawTicksDivider(color: style.backgroundColor.withAlphaComponent(0.1), position: 0.074960128)
 		
@@ -179,7 +179,7 @@ class FalunView: NSView {
 		let hours = (Double(comps.hour ?? 0) / 12.0) + ((minutes / 60.0) * (60.0 / 12.0))
 		draw(day: comps.day ?? 0, hours: hours, minutes: minutes, seconds: seconds)
 	}
-	
+	*/
 	func drawComplications() {}
 	
 	// MARK: - Drawing Helpers
@@ -230,7 +230,7 @@ class FalunView: NSView {
 			context.restoreGState()
 		}
 	}
-	
+/*
 	func drawFaceBackground() {
 		style.faceColor.setFill()
 		
@@ -238,7 +238,7 @@ class FalunView: NSView {
 		clockPath.lineWidth = 4
 		clockPath.fill()
 	}
-	
+	*/
 	func drawTicksDivider(color: NSColor, position: Double) {
 		color.setStroke()
 		let ticksFrame = clockFrame.insetBy(dx: clockFrame.size.width * CGFloat(position),
@@ -292,7 +292,7 @@ class FalunView: NSView {
 			tickPath.stroke()
 		}
 	}
-	
+	/*
 	func drawNumbers(fontSize: CGFloat, radius: Double, values: [Int] = [12, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
 					 in rect: CGRect? = nil)
 	{
@@ -322,7 +322,7 @@ class FalunView: NSView {
 			string.draw(in: rect)
 		}
 	}
-	
+	*/
 	// MARK: - Private
 	
 	@objc private func preferencesDidChange(_ notification: NSNotification?) {

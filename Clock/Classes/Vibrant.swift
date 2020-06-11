@@ -77,8 +77,8 @@ final class Vibrant: FalunView {
 	
 // //	 MARK: - ClockView
 	
-	override class var modelName: String {
-		return "BN0021"
+	override class var schemeName: String {
+		return "Vibrant"
 	}
 	
 	override var styleName: String {
@@ -99,7 +99,7 @@ final class Vibrant: FalunView {
 		super.initialize()
 		style = Style.default
 	}
-	
+	/*
 	override func drawTicks() {
 		let color = style.minuteColor
 		drawTicks(minorColor: color.withAlphaComponent(0.5), minorLength: 0.05, minorThickness: 0.003,
@@ -109,6 +109,6 @@ final class Vibrant: FalunView {
 	override func drawNumbers() {
 		drawNumbers(fontSize: 0.06, radius: 0.39)
 	}
-
+*/
 
 }
