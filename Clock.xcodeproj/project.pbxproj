@@ -39,6 +39,12 @@
 		21EA959C197645D600E4370A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EA95981976428A00E4370A /* MainView.swift */; };
 		21F358441977A2F00080C74A /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EA95A0197649BE00E4370A /* PreferencesWindowController.swift */; };
 		21F358741977A6960080C74A /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EA95A0197649BE00E4370A /* PreferencesWindowController.swift */; };
+		9FCFDBCE2492882400486626 /* FalunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFDBCD2492882400486626 /* FalunView.swift */; };
+		9FCFDBD1249288CB00486626 /* OptionsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFDBCF249288CB00486626 /* OptionsWindowController.swift */; };
+		9FCFDBD2249288CB00486626 /* OptionsWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FCFDBD0249288CB00486626 /* OptionsWindowController.xib */; };
+		9FCFDBD4249289A400486626 /* Prefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFDBD3249289A400486626 /* Prefs.swift */; };
+		9FCFDBD624928A2F00486626 /* FalunStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFDBD524928A2F00486626 /* FalunStyle.swift */; };
+		9FCFDBD824928C0F00486626 /* Vibrant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFDBD724928C0F00486626 /* Vibrant.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +76,12 @@
 		21D784202066B04000A6C175 /* ClockStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockStyle.swift; sourceTree = "<group>"; };
 		21EA95981976428A00E4370A /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		21EA95A0197649BE00E4370A /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
+		9FCFDBCD2492882400486626 /* FalunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FalunView.swift; sourceTree = "<group>"; };
+		9FCFDBCF249288CB00486626 /* OptionsWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsWindowController.swift; sourceTree = "<group>"; };
+		9FCFDBD0249288CB00486626 /* OptionsWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionsWindowController.xib; sourceTree = "<group>"; };
+		9FCFDBD3249289A400486626 /* Prefs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prefs.swift; sourceTree = "<group>"; };
+		9FCFDBD524928A2F00486626 /* FalunStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FalunStyle.swift; sourceTree = "<group>"; };
+		9FCFDBD724928C0F00486626 /* Vibrant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibrant.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +108,7 @@
 		2117D0651A96727A0051552F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9FCFDBD724928C0F00486626 /* Vibrant.swift */,
 				216F0AA21A969767005B946B /* BN0021.swift */,
 				21D595F11A94693900D29D3A /* BN0032.swift */,
 				216CECDA236E108900438890 /* BN0095.swift */,
@@ -117,12 +130,17 @@
 			isa = PBXGroup;
 			children = (
 				21EA95981976428A00E4370A /* MainView.swift */,
+				9FCFDBCD2492882400486626 /* FalunView.swift */,
 				21D595F31A94694B00D29D3A /* ClockView.swift */,
 				2117D0651A96727A0051552F /* Models */,
 				21EA95A0197649BE00E4370A /* PreferencesWindowController.swift */,
+				9FCFDBCF249288CB00486626 /* OptionsWindowController.swift */,
+				9FCFDBD0249288CB00486626 /* OptionsWindowController.xib */,
 				219E68F719782D5400805FEA /* Preferences.swift */,
+				9FCFDBD3249289A400486626 /* Prefs.swift */,
 				21D595F71A946E1900D29D3A /* Colors.swift */,
 				21D784202066B04000A6C175 /* ClockStyle.swift */,
+				9FCFDBD524928A2F00486626 /* FalunStyle.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -287,6 +305,7 @@
 			files = (
 				2156238A18D0191800DF57B5 /* Preferences.xib in Resources */,
 				2147FD081A8BB6800048407C /* thumbnail@2x.png in Resources */,
+				9FCFDBD2249288CB00486626 /* OptionsWindowController.xib in Resources */,
 				21D56DFE19AF825A00C40125 /* braun.pdf in Resources */,
 				2147FD071A8BB6800048407C /* thumbnail.png in Resources */,
 			);
@@ -310,14 +329,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FCFDBD1249288CB00486626 /* OptionsWindowController.swift in Sources */,
 				21D595F21A94693900D29D3A /* BN0032.swift in Sources */,
 				21D595F81A946E1900D29D3A /* Colors.swift in Sources */,
 				216F0AA31A969767005B946B /* BN0021.swift in Sources */,
+				9FCFDBD824928C0F00486626 /* Vibrant.swift in Sources */,
 				21F358741977A6960080C74A /* PreferencesWindowController.swift in Sources */,
 				21D595F41A94694B00D29D3A /* ClockView.swift in Sources */,
+				9FCFDBD624928A2F00486626 /* FalunStyle.swift in Sources */,
 				2117D0641A9672600051552F /* BN0111.swift in Sources */,
 				21D784212066B04000A6C175 /* ClockStyle.swift in Sources */,
+				9FCFDBD4249289A400486626 /* Prefs.swift in Sources */,
 				21EA95991976428A00E4370A /* MainView.swift in Sources */,
+				9FCFDBCE2492882400486626 /* FalunView.swift in Sources */,
 				219E68F819782D5400805FEA /* Preferences.swift in Sources */,
 				216CECDB236E108900438890 /* BN0095.swift in Sources */,
 			);

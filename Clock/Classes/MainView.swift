@@ -5,25 +5,44 @@ final class MainView: ScreenSaverView {
 
 	// MARK: - Properties
 
-	private var clockView: ClockView? {
+//	private var clockView: ClockView? {
+//		willSet {
+//			let clockView = self.clockView
+//			clockView?.removeFromSuperview()
+//		}
+//
+//		didSet {
+//			if let clockView = clockView {
+//				clockView.autoresizingMask = [.width, .height]
+//				addSubview(clockView)
+//			}
+//		}
+//	}
+	private var myView: FalunView? {
 		willSet {
-			let clockView = self.clockView
-			clockView?.removeFromSuperview()
+			let myView = self.myView
+			myView?.removeFromSuperview()
 		}
-
+		
 		didSet {
-			if let clockView = clockView {
-				clockView.autoresizingMask = [.width, .height]
-				addSubview(clockView)
+			if let myView = myView {
+				myView.autoresizingMask = [.width, .height]
+				addSubview(myView)
 			}
 		}
 	}
 
-	private let preferencesWindowController: PreferencesWindowController = {
-		let controller = PreferencesWindowController()
+//	private let preferencesWindowController: PreferencesWindowController = {
+//		let controller = PreferencesWindowController()
+//		controller.loadWindow()
+//		return controller
+//	}()
+	private let optionsWindowController: OptionsWindowController = {
+		let controller = OptionsWindowController()
 		controller.loadWindow()
 		return controller
 	}()
+	
 
 	// MARK: - Initializers
 
@@ -39,9 +58,14 @@ final class MainView: ScreenSaverView {
 
 	// MARK: - ScreenSaverView
 
+//	override func animateOneFrame() {
+//		if let clockView = clockView {
+//			clockView.setNeedsDisplay(clockView.clockFrame)
+//		}
+//	}
 	override func animateOneFrame() {
-		if let clockView = clockView {
-			clockView.setNeedsDisplay(clockView.clockFrame)
+		if let myView = myView {
+			myView.setNeedsDisplay(myView.clockFrame)
 		}
 	}
 
@@ -49,8 +73,11 @@ final class MainView: ScreenSaverView {
 		return true
 	}
 
+//	override var configureSheet: NSWindow? {
+//		return preferencesWindowController.window
+//	}
 	override var configureSheet: NSWindow? {
-		return preferencesWindowController.window
+		return optionsWindowController.window
 	}
 
 	// MARK: - Private
@@ -64,10 +91,18 @@ final class MainView: ScreenSaverView {
 		preferencesDidChange(nil)
 	}
 
+//	@objc private func preferencesDidChange(_ notification: NSNotification?) {
+//		let preferences = (notification?.object as? Preferences) ?? Preferences()
+//		let view = preferences.model.init(frame: bounds)
+//		view.styleName = preferences.styleName
+//		clockView = view
+//	}
 	@objc private func preferencesDidChange(_ notification: NSNotification?) {
-		let preferences = (notification?.object as? Preferences) ?? Preferences()
+		let preferences = (notification?.object as? Prefs) ?? Prefs()
 		let view = preferences.model.init(frame: bounds)
 		view.styleName = preferences.styleName
-		clockView = view
+		myView = view
 	}
+
+
 }
