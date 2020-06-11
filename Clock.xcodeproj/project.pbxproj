@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		2117D0641A9672600051552F /* BN0111.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2117D0631A9672600051552F /* BN0111.swift */; };
 		2133640618D0BF3600CB22C7 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2156237E18D0191800DF57B5 /* Preferences.xib */; };
-		2147FD071A8BB6800048407C /* thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 2147FD041A8BB6800048407C /* thumbnail.png */; };
-		2147FD081A8BB6800048407C /* thumbnail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2147FD051A8BB6800048407C /* thumbnail@2x.png */; };
+		2147FD071A8BB6800048407C /* WASthumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 2147FD041A8BB6800048407C /* WASthumbnail.png */; };
+		2147FD081A8BB6800048407C /* WASthumbnail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2147FD051A8BB6800048407C /* WASthumbnail@2x.png */; };
 		2147FD0A1A8BB93D0048407C /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21592F4618CB7D4A00931D75 /* AppKit.framework */; };
 		2156238A18D0191800DF57B5 /* Preferences.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2156237E18D0191800DF57B5 /* Preferences.xib */; };
 		21592F4418CB7D4A00931D75 /* ScreenSaver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21592F4318CB7D4A00931D75 /* ScreenSaver.framework */; };
@@ -41,16 +41,18 @@
 		21F358741977A6960080C74A /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EA95A0197649BE00E4370A /* PreferencesWindowController.swift */; };
 		9FCFDBCE2492882400486626 /* FalunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFDBCD2492882400486626 /* FalunView.swift */; };
 		9FCFDBD1249288CB00486626 /* OptionsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFDBCF249288CB00486626 /* OptionsWindowController.swift */; };
-		9FCFDBD2249288CB00486626 /* OptionsWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FCFDBD0249288CB00486626 /* OptionsWindowController.xib */; };
+		9FCFDBD2249288CB00486626 /* Optionsr.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FCFDBD0249288CB00486626 /* Optionsr.xib */; };
 		9FCFDBD4249289A400486626 /* Prefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFDBD3249289A400486626 /* Prefs.swift */; };
 		9FCFDBD624928A2F00486626 /* FalunStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFDBD524928A2F00486626 /* FalunStyle.swift */; };
 		9FCFDBD824928C0F00486626 /* Vibrant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFDBD724928C0F00486626 /* Vibrant.swift */; };
+		9FCFDBDB24928E7D00486626 /* thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FCFDBD924928E7D00486626 /* thumbnail.png */; };
+		9FCFDBDC24928E7D00486626 /* thumbnail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FCFDBDA24928E7D00486626 /* thumbnail@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2117D0631A9672600051552F /* BN0111.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BN0111.swift; sourceTree = "<group>"; };
-		2147FD041A8BB6800048407C /* thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbnail.png; sourceTree = "<group>"; };
-		2147FD051A8BB6800048407C /* thumbnail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbnail@2x.png"; sourceTree = "<group>"; };
+		2147FD041A8BB6800048407C /* WASthumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WASthumbnail.png; sourceTree = "<group>"; };
+		2147FD051A8BB6800048407C /* WASthumbnail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "WASthumbnail@2x.png"; sourceTree = "<group>"; };
 		2156237D18D0191800DF57B5 /* Clock-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Clock-Info.plist"; sourceTree = "<group>"; };
 		2156237E18D0191800DF57B5 /* Preferences.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Preferences.xib; sourceTree = "<group>"; };
 		21592F3E18CB7D4A00931D75 /* Clock.saver */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Clock.saver; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,10 +80,12 @@
 		21EA95A0197649BE00E4370A /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
 		9FCFDBCD2492882400486626 /* FalunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FalunView.swift; sourceTree = "<group>"; };
 		9FCFDBCF249288CB00486626 /* OptionsWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsWindowController.swift; sourceTree = "<group>"; };
-		9FCFDBD0249288CB00486626 /* OptionsWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionsWindowController.xib; sourceTree = "<group>"; };
+		9FCFDBD0249288CB00486626 /* Optionsr.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Optionsr.xib; sourceTree = "<group>"; };
 		9FCFDBD3249289A400486626 /* Prefs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prefs.swift; sourceTree = "<group>"; };
 		9FCFDBD524928A2F00486626 /* FalunStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FalunStyle.swift; sourceTree = "<group>"; };
 		9FCFDBD724928C0F00486626 /* Vibrant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibrant.swift; sourceTree = "<group>"; };
+		9FCFDBD924928E7D00486626 /* thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbnail.png; sourceTree = "<group>"; };
+		9FCFDBDA24928E7D00486626 /* thumbnail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbnail@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,7 +139,7 @@
 				2117D0651A96727A0051552F /* Models */,
 				21EA95A0197649BE00E4370A /* PreferencesWindowController.swift */,
 				9FCFDBCF249288CB00486626 /* OptionsWindowController.swift */,
-				9FCFDBD0249288CB00486626 /* OptionsWindowController.xib */,
+				9FCFDBD0249288CB00486626 /* Optionsr.xib */,
 				219E68F719782D5400805FEA /* Preferences.swift */,
 				9FCFDBD3249289A400486626 /* Prefs.swift */,
 				21D595F71A946E1900D29D3A /* Colors.swift */,
@@ -148,8 +152,10 @@
 		2156237C18D0191800DF57B5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				2147FD041A8BB6800048407C /* thumbnail.png */,
-				2147FD051A8BB6800048407C /* thumbnail@2x.png */,
+				9FCFDBD924928E7D00486626 /* thumbnail.png */,
+				9FCFDBDA24928E7D00486626 /* thumbnail@2x.png */,
+				2147FD041A8BB6800048407C /* WASthumbnail.png */,
+				2147FD051A8BB6800048407C /* WASthumbnail@2x.png */,
 				21D56DFD19AF825A00C40125 /* braun.pdf */,
 				2156237D18D0191800DF57B5 /* Clock-Info.plist */,
 				2156237E18D0191800DF57B5 /* Preferences.xib */,
@@ -304,10 +310,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2156238A18D0191800DF57B5 /* Preferences.xib in Resources */,
-				2147FD081A8BB6800048407C /* thumbnail@2x.png in Resources */,
-				9FCFDBD2249288CB00486626 /* OptionsWindowController.xib in Resources */,
+				2147FD081A8BB6800048407C /* WASthumbnail@2x.png in Resources */,
+				9FCFDBDB24928E7D00486626 /* thumbnail.png in Resources */,
+				9FCFDBDC24928E7D00486626 /* thumbnail@2x.png in Resources */,
+				9FCFDBD2249288CB00486626 /* Optionsr.xib in Resources */,
 				21D56DFE19AF825A00C40125 /* braun.pdf in Resources */,
-				2147FD071A8BB6800048407C /* thumbnail.png in Resources */,
+				2147FD071A8BB6800048407C /* WASthumbnail.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

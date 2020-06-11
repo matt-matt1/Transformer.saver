@@ -32,11 +32,11 @@ final class MainView: ScreenSaverView {
 		}
 	}
 
-//	private let preferencesWindowController: PreferencesWindowController = {
-//		let controller = PreferencesWindowController()
-//		controller.loadWindow()
-//		return controller
-//	}()
+	private let preferencesWindowController: PreferencesWindowController = {
+		let controller = PreferencesWindowController()
+		controller.loadWindow()
+		return controller
+	}()
 	private let optionsWindowController: OptionsWindowController = {
 		let controller = OptionsWindowController()
 		controller.loadWindow()
@@ -73,12 +73,12 @@ final class MainView: ScreenSaverView {
 		return true
 	}
 
-//	override var configureSheet: NSWindow? {
-//		return preferencesWindowController.window
-//	}
 	override var configureSheet: NSWindow? {
-		return optionsWindowController.window
+		return preferencesWindowController.window
 	}
+//	override var configureSheet: NSWindow? {
+//		return optionsWindowController.window
+//	}
 
 	// MARK: - Private
 
