@@ -73,12 +73,12 @@ final class MainView: ScreenSaverView {
 		return true
 	}
 
-	override var configureSheet: NSWindow? {
-		return preferencesWindowController.window
-	}
 //	override var configureSheet: NSWindow? {
-//		return optionsWindowController.window
+//		return preferencesWindowController.window
 //	}
+	override var configureSheet: NSWindow? {
+		return optionsWindowController.window
+	}
 
 	// MARK: - Private
 
