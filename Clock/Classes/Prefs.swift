@@ -20,16 +20,12 @@ final class Prefs: NSObject {
 	
 	private enum DefaultsKey: String {
 		case scheme = "FalunScheme"
-//		case model = "SAMModel"
-//		case style = "SAMStyle"
-//		case logo = "SAMClockLogo"
-//		case seconds = "SAMSeconds"
 		case backgroundColor = "backgroundColor"
 		case displayRays = "Falun_displayRays"
 		case numStars = "Falun_numStars"
 		case maxStarSize = "Falun_maxStarSize"
 		case thesholdStarSize = "Falun_thesholdStarSize"
-		case colorSchemeStar = "Falun_colorSchemeStar"
+		case starColorScheme = "Falun_starColorScheme"
 		case baseRadius = "Falun_baseRadius"
 		case baseFillColor = "Falun_baseFillColor"
 		case baseStrokeWidth = "Falun_baseStrokeWidth"
@@ -72,22 +68,16 @@ final class Prefs: NSObject {
 	private let defaults: UserDefaults = ScreenSaverDefaults(
 		forModuleWithName: Bundle(for: Prefs.self).bundleIdentifier!)!
 	
-	private let models = [
+	/*private*/ let schemes = [
+//		"null"
 		Vibrant.self,
-//		BN0021.self,
-//		BN0032.self,
-//		BN0095.self,
-//		BN0111.self
+//		Cyan.self,
+//		custom.self
 	]
-	
-//	private let defaultModel = Vibrant.self//BN0032.self
-	private let defaultScheme = Vibrant.self
-
-//	var model: FalunView.Type {
-//		return models.first { $0.modelName == modelName } ?? defaultModel
-//	}
+	/*private*/ let defaultScheme = Vibrant.self
+//	/*private*/ let defaultScheme = "no"
 	var scheme: FalunView.Type {
-		return models.first { $0.schemeName == schemeName } ?? defaultScheme
+		return schemes.first { $0.schemeName == schemeName } ?? defaultScheme
 	}
 	@objc var schemeName: String {
 		get {
@@ -100,65 +90,17 @@ final class Prefs: NSObject {
 		}
 	}
 
-//	@objc var modelName: String {
-//		get {
-//			return defaults.string(forKey: DefaultsKey.model.key) ?? defaultModel.modelName
-//		}
-//
-//		set {
-//			defaults.set(newValue, forKey: DefaultsKey.model.key)
-//			save()
-//
-//			NotificationCenter.default.post(name: .ModelDidChange, object: model)
-//		}
-//	}
-	
-//	var style: FalunStyle {
-//		let styles = model.styles
-//		let index = styles.map { $0.rawValue }.firstIndex(of: styleName) ?? styles.startIndex
-//		return styles[index]
-//	}
-//	var scheme: FalunStyle {
-//		let styles = model.styles
-//		let index = styles.map { $0.rawValue }.firstIndex(of: styleName) ?? styles.startIndex
-//		return styles[index]
-//	}
-//	@objc var styleName: String {
-//		get {
-//			return defaults.string(forKey: DefaultsKey.style.key)!
-//		}
-//
-//		set {
-//			defaults.set(newValue, forKey: DefaultsKey.style.key)
-//			save()
-//		}
-//	}
-	
-//	@objc var drawsLogo: Bool {
-//		get {
-//			return defaults.bool(forKey: DefaultsKey.logo.key)
-//		}
-//
-//		set {
-//			defaults.set(newValue, forKey: DefaultsKey.logo.key)
-//			save()
-//		}
-//	}
-	
-//	@objc var drawsSeconds: Bool {
-//		get {
-//			return defaults.bool(forKey: DefaultsKey.seconds.key)
-//		}
-//
-//		set {
-//			defaults.set(newValue, forKey: DefaultsKey.seconds.key)
-//			save()
-//		}
-//	}
+	var starSchemes: [FalunView.ColorSchemeStar] {
+//		let schemes = scheme.ColorSchemeStar
+//		let index = schemes.map { $0.rawValue }.firstIndex(of: schemeName) ?? schemes.startIndex
+//		return schemes[index]
+		return scheme.ColorSchemeStar.allCases
+	}
+
 	
 	var backgroundColor: NSColor {
 		get {
-			return defaults.colorForKey(key: DefaultsKey.backgroundColor.key) ?? defaultScheme.Style.default.backgroundColor
+			return defaults.colorForKey(key: DefaultsKey.backgroundColor.key) ?? defaultScheme.setting.backgroundColor
 		}
 		set {
 			defaults.set(newValue, forKey: DefaultsKey.backgroundColor.key)
@@ -201,12 +143,12 @@ final class Prefs: NSObject {
 			save()
 		}
 	}
-	var colorSchemeStar: String {
+	var starColorScheme: String {
 		get {
-			return defaults.string(forKey: DefaultsKey.colorSchemeStar.key) ?? defaultScheme.Style.default.colorSchemeStar
+			return defaults.string(forKey: DefaultsKey.starColorScheme.key) ?? defaultScheme.setting.starColorScheme//defaultScheme.Style.default.starColorScheme
 		}
 		set {
-			defaults.set(newValue, forKey: DefaultsKey.colorSchemeStar.key)
+			defaults.set(newValue, forKey: DefaultsKey.starColorScheme.key)
 			save()
 		}
 	}
@@ -221,7 +163,7 @@ final class Prefs: NSObject {
 	}
 	var baseFillColor: NSColor {
 		get {
-			return defaults.colorForKey(key: DefaultsKey.baseFillColor.key) ?? defaultScheme.Style.default.baseFillColor
+			return defaults.colorForKey(key: DefaultsKey.baseFillColor.key) ?? defaultScheme.setting.baseFillColor
 		}
 		set {
 			defaults.set(newValue, forKey: DefaultsKey.baseFillColor.key)
@@ -239,7 +181,7 @@ final class Prefs: NSObject {
 	}
 	var baseStrokeColor: NSColor {
 		get {
-			return defaults.colorForKey(key: DefaultsKey.baseStrokeColor.key) ?? defaultScheme.Style.default.baseStrokeColor
+			return defaults.colorForKey(key: DefaultsKey.baseStrokeColor.key) ?? defaultScheme.setting.baseStrokeColor
 		}
 		set {
 			defaults.set(newValue, forKey: DefaultsKey.baseStrokeColor.key)
@@ -266,7 +208,7 @@ final class Prefs: NSObject {
 	}
 	var centerDiscFill: NSColor {
 		get {
-			return defaults.colorForKey(key: DefaultsKey.centerDiscFill.key) ?? defaultScheme.Style.default.centerDiscFill
+			return defaults.colorForKey(key: DefaultsKey.centerDiscFill.key) ?? defaultScheme.setting.centerDiscFill
 		}
 		set {
 			defaults.set(newValue, forKey: DefaultsKey.centerDiscFill.key)
@@ -284,7 +226,7 @@ final class Prefs: NSObject {
 	}
 	var centerDiscStroke: NSColor {
 		get {
-			return defaults.colorForKey(key: DefaultsKey.centerDiscStroke.key) ?? defaultScheme.Style.default.centerDiscStroke
+			return defaults.colorForKey(key: DefaultsKey.centerDiscStroke.key) ?? defaultScheme.setting.centerDiscStroke
 		}
 		set {
 			defaults.set(newValue, forKey: DefaultsKey.centerDiscStroke.key)
@@ -302,7 +244,7 @@ final class Prefs: NSObject {
 	}
 	var centerSymbolFill: NSColor {
 		get {
-			return defaults.colorForKey(key: DefaultsKey.centerSymbolFill.key) ?? defaultScheme.Style.default.centerSymbolFill
+			return defaults.colorForKey(key: DefaultsKey.centerSymbolFill.key) ?? defaultScheme.setting.centerSymbolFill
 		}
 		set {
 			defaults.set(newValue, forKey: DefaultsKey.centerSymbolFill.key)
@@ -320,7 +262,7 @@ final class Prefs: NSObject {
 	}
 	var centerSymbolStroke: NSColor {
 		get {
-			return defaults.colorForKey(key: DefaultsKey.centerSymbolStroke.key) ?? defaultScheme.Style.default.centerSymbolStroke
+			return defaults.colorForKey(key: DefaultsKey.centerSymbolStroke.key) ?? defaultScheme.setting.centerSymbolStroke
 		}
 		set {
 			defaults.set(newValue, forKey: DefaultsKey.centerSymbolStroke.key)
@@ -338,7 +280,7 @@ final class Prefs: NSObject {
 	}
 	var curvedSymbolFill: NSColor {
 		get {
-			return defaults.colorForKey(key: DefaultsKey.curvedSymbolFill.key) ?? defaultScheme.Style.default.curvedSymbolFill
+			return defaults.colorForKey(key: DefaultsKey.curvedSymbolFill.key) ?? defaultScheme.setting.curvedSymbolFill
 		}
 		set {
 			defaults.set(newValue, forKey: DefaultsKey.curvedSymbolFill.key)
@@ -356,7 +298,7 @@ final class Prefs: NSObject {
 	}
 	var curvedSymbolStroke: NSColor {
 		get {
-			return defaults.colorForKey(key: DefaultsKey.curvedSymbolStroke.key) ?? defaultScheme.Style.default.curvedSymbolStroke
+			return defaults.colorForKey(key: DefaultsKey.curvedSymbolStroke.key) ?? defaultScheme.setting.curvedSymbolStroke
 		}
 		set {
 			defaults.set(newValue, forKey: DefaultsKey.curvedSymbolStroke.key)
@@ -383,7 +325,7 @@ final class Prefs: NSObject {
 	}
 	var yySymbolStroke: NSColor {
 		get {
-			return defaults.colorForKey(key: DefaultsKey.yySymbolStroke.key) ?? defaultScheme.Style.default.yySymbolStroke
+			return defaults.colorForKey(key: DefaultsKey.yySymbolStroke.key) ?? defaultScheme.setting.yySymbolStroke
 		}
 		set {
 			defaults.set(newValue, forKey: DefaultsKey.yySymbolStroke.key)
@@ -392,7 +334,7 @@ final class Prefs: NSObject {
 	}
 	var yyPriFill: NSColor {
 		get {
-			return defaults.colorForKey(key: DefaultsKey.yyPriFill.key) ?? defaultScheme.Style.default.yyPriFill
+			return defaults.colorForKey(key: DefaultsKey.yyPriFill.key) ?? defaultScheme.setting.yyPriFill
 		}
 		set {
 			defaults.set(newValue, forKey: DefaultsKey.yyPriFill.key)
@@ -401,7 +343,7 @@ final class Prefs: NSObject {
 	}
 	var yySecFill: NSColor {
 		get {
-			return defaults.colorForKey(key: DefaultsKey.yySecFill.key) ?? defaultScheme.Style.default.yySecFill
+			return defaults.colorForKey(key: DefaultsKey.yySecFill.key) ?? defaultScheme.setting.yySecFill
 		}
 		set {
 			defaults.set(newValue, forKey: DefaultsKey.yySecFill.key)
@@ -419,7 +361,7 @@ final class Prefs: NSObject {
 	}
 	var yyPriDotFill: NSColor {
 		get {
-			return defaults.colorForKey(key: DefaultsKey.yyPriDotFill.key) ?? defaultScheme.Style.default.yyPriDotFill
+			return defaults.colorForKey(key: DefaultsKey.yyPriDotFill.key) ?? defaultScheme.setting.yyPriDotFill
 		}
 		set {
 			defaults.set(newValue, forKey: DefaultsKey.yyPriDotFill.key)
@@ -437,7 +379,7 @@ final class Prefs: NSObject {
 	}
 	var yyPriDotStroke: NSColor {
 		get {
-			return defaults.colorForKey(key: DefaultsKey.yyPriDotStroke.key) ?? defaultScheme.Style.default.yyPriDotStroke
+			return defaults.colorForKey(key: DefaultsKey.yyPriDotStroke.key) ?? defaultScheme.setting.yyPriDotStroke
 		}
 		set {
 			defaults.set(newValue, forKey: DefaultsKey.yyPriDotStroke.key)
@@ -446,7 +388,7 @@ final class Prefs: NSObject {
 	}
 	var yySecDotFill: NSColor {
 		get {
-			return defaults.colorForKey(key: DefaultsKey.yySecDotFill.key) ?? defaultScheme.Style.default.yySecDotFill
+			return defaults.colorForKey(key: DefaultsKey.yySecDotFill.key) ?? defaultScheme.setting.yySecDotFill
 		}
 		set {
 			defaults.set(newValue, forKey: DefaultsKey.yySecDotFill.key)
@@ -464,7 +406,7 @@ final class Prefs: NSObject {
 	}
 	var yySecDotStroke: NSColor {
 		get {
-			return defaults.colorForKey(key: DefaultsKey.yySecDotStroke.key) ?? defaultScheme.Style.default.yySecDotStroke
+			return defaults.colorForKey(key: DefaultsKey.yySecDotStroke.key) ?? defaultScheme.setting.yySecDotStroke
 		}
 		set {
 			defaults.set(newValue, forKey: DefaultsKey.yySecDotStroke.key)
@@ -476,12 +418,48 @@ final class Prefs: NSObject {
 	// MARK: - Initializers
 	
 	override init() {
-//		defaults.register(defaults: [
+		defaults.register(defaults: [
 //			DefaultsKey.model.key: defaultModel.modelName,
 //			DefaultsKey.style.key: defaultModel.Style.default.rawValue,
 //			DefaultsKey.logo.key: false,
 //			DefaultsKey.seconds.key: true
-//		])
+/*			DefaultsKey.scheme.key: defaultScheme.schemeName,*/
+			DefaultsKey.backgroundColor.key: defaultScheme.setting.backgroundColor, //Vibrant.self.Style.allCases.b,//defaultScheme.backgroundColor.default.rawValue,
+			DefaultsKey.displayRays.key: defaultScheme.setting.displayRays,
+			DefaultsKey.numStars.key: defaultScheme.setting.numStars,
+			DefaultsKey.maxStarSize.key: defaultScheme.setting.maxStarSize,
+			DefaultsKey.thesholdStarSize.key: defaultScheme.setting.thesholdStarSize,
+			DefaultsKey.starColorScheme.key: defaultScheme.setting.starColorScheme,
+			DefaultsKey.baseRadius.key: defaultScheme.setting.baseRadius,
+			DefaultsKey.baseFillColor.key: defaultScheme.setting.baseFillColor,
+			DefaultsKey.baseStrokeWidth.key: defaultScheme.setting.baseStrokeWidth,
+			DefaultsKey.baseStrokeColor.key: defaultScheme.setting.baseStrokeColor,
+			DefaultsKey.baseShadow.key: defaultScheme.setting.baseShadow,
+			DefaultsKey.centerDiscRadius.key: defaultScheme.setting.centerDiscRadius,
+			DefaultsKey.centerDiscFill.key: defaultScheme.setting.centerDiscFill,
+			DefaultsKey.centerDiscStrokeWidth.key: defaultScheme.setting.centerDiscStrokeWidth,
+			DefaultsKey.centerDiscStroke.key: defaultScheme.setting.centerDiscStroke,
+			DefaultsKey.centerSymbolCornerRadius.key: defaultScheme.setting.centerSymbolCornerRadius,
+			DefaultsKey.centerSymbolFill.key: defaultScheme.setting.centerSymbolFill,
+			DefaultsKey.centerSymbolStrokeWidth.key: defaultScheme.setting.centerSymbolStrokeWidth,
+			DefaultsKey.centerSymbolStroke.key: defaultScheme.setting.centerSymbolStroke,
+			DefaultsKey.curvedSymbolThickness.key: defaultScheme.setting.curvedSymbolThickness,
+			DefaultsKey.curvedSymbolFill.key: defaultScheme.setting.curvedSymbolFill,
+			DefaultsKey.curvedSymbolStrokeWidth.key: defaultScheme.setting.curvedSymbolStrokeWidth,
+			DefaultsKey.curvedSymbolStroke.key: defaultScheme.setting.curvedSymbolStroke,
+			DefaultsKey.yySymbolRadius.key: defaultScheme.setting.yySymbolRadius,
+			DefaultsKey.yySymbolStrokeWidth.key: defaultScheme.setting.yySymbolStrokeWidth,
+			DefaultsKey.yySymbolStroke.key: defaultScheme.setting.yySymbolStroke,
+			DefaultsKey.yyPriFill.key: defaultScheme.setting.yyPriFill,
+			DefaultsKey.yySecFill.key: defaultScheme.setting.yySecFill,
+			DefaultsKey.yyDotRadius.key: defaultScheme.setting.yyDotRadius,
+			DefaultsKey.yyPriDotFill.key: defaultScheme.setting.yyPriDotFill,
+			DefaultsKey.yyPriDotStrokeWidth.key: defaultScheme.setting.yyPriDotStrokeWidth,
+			DefaultsKey.yyPriDotStroke.key: defaultScheme.setting.yyPriDotStroke,
+			DefaultsKey.yySecDotFill.key: defaultScheme.setting.yySecDotFill,
+			DefaultsKey.yySecDotStrokeWidth.key: Vibrant.setting.yySecDotStrokeWidth,
+			DefaultsKey.yySecDotStroke.key: Vibrant.setting.yySecDotStroke
+		])
 	}
 	
 	// MARK: - Private

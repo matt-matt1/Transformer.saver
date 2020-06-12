@@ -8,15 +8,57 @@
 
 import AppKit
 
-protocol FalunStyle: CustomStringConvertible {
-	var rawValue: String { get }
+
+protocol FalunStyle/*: CustomStringConvertible*/ {
+//	var rawValue: String { get }
 	
+	static var backgroundColor: NSColor { get }
+	static var displayRays: Bool { get }
+	static var numStars: Float { get }
+	static var maxStarSize: Float { get }
+	static var thesholdStarSize: Float { get }
+	//	associatedtype SomeType: RawRepresentable //where SomeType.RawValue: StringProtocol
+	static var starColorSchemes: [String] { get }
+	static var starColorScheme: String { get }
+	static var baseRadius: Float { get }
+	static var baseFillColor: NSColor { get }
+	static var baseStrokeWidth: Float { get }
+	static var baseStrokeColor: NSColor { get }
+	static var baseShadow: Bool { get }
+	static var centerDiscRadius: Float { get }
+	static var centerDiscFill: NSColor { get }
+	static var centerDiscStrokeWidth: Float { get }
+	static var centerDiscStroke: NSColor { get }
+	static var centerSymbolCornerRadius: Float { get }
+	static var centerSymbolFill: NSColor { get }
+	static var centerSymbolStrokeWidth: Float { get }
+	static var centerSymbolStroke: NSColor { get }
+	static var curvedSymbolThickness: Float { get }
+	static var curvedSymbolFill: NSColor { get }
+	static var curvedSymbolStrokeWidth: Float { get }
+	static var curvedSymbolStroke: NSColor { get }
+	static var yySymbolRadius: Float { get }
+	static var yySymbolStrokeWidth: Float { get }
+	static var yySymbolStroke: NSColor { get }
+	static var yyPriFill: NSColor { get }
+	static var yySecFill: NSColor { get }
+	static var yyDotRadius: Float { get }
+	static var yyPriDotFill: NSColor { get }
+	static var yyPriDotStrokeWidth: Float { get }
+	static var yyPriDotStroke: NSColor { get }
+	static var yySecDotFill: NSColor { get }
+	static var yySecDotStrokeWidth: Float { get }
+	static var yySecDotStroke: NSColor { get }
+
+/*
 	var backgroundColor: NSColor { get }
 	var displayRays: Bool { get }
 	var numStars: Float { get }
 	var maxStarSize: Float { get }
 	var thesholdStarSize: Float { get }
-	var colorSchemeStar: String { get }
+//	associatedtype SomeType: RawRepresentable //where SomeType.RawValue: StringProtocol
+	var starColorSchemes: [String] { get }
+	var starColorScheme: String { get }
 	var baseRadius: Float { get }
 	var baseFillColor: NSColor { get }
 	var baseStrokeWidth: Float { get }
@@ -46,7 +88,8 @@ protocol FalunStyle: CustomStringConvertible {
 	var yySecDotFill: NSColor { get }
 	var yySecDotStrokeWidth: Float { get }
 	var yySecDotStroke: NSColor { get }
-
+*/
+	
 //	var backgroundColor: NSColor { get }
 //	var faceColor: NSColor { get }
 //	var hourColor: NSColor { get }
@@ -54,12 +97,13 @@ protocol FalunStyle: CustomStringConvertible {
 //	var secondColor: NSColor { get }
 //	var logoColor: NSColor { get }
 	
-	static var `default`: FalunStyle { get }
+//	static var `default`: FalunStyle { get }
 }
 
 
 extension FalunStyle {
-
+	
+/*
 	var backgroundColor: NSColor {
 		return NSColor.purple
 	}
@@ -190,5 +234,6 @@ extension FalunStyle {
 //		return minuteColor
 //	}
 
-
+*/
 }
+

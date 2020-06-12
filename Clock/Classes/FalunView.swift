@@ -28,13 +28,13 @@ class FalunView: NSView {
 	
 	var style: FalunStyle!
 	
-	var styleName: String {
-		set {}
-		
-		get {
-			return style.description
-		}
-	}
+//	var styleName: String {
+//		set {}
+//
+//		get {
+//			return sett.description
+//		}
+//	}
 	
 	class var styles: [FalunStyle] {
 		return []
@@ -45,6 +45,19 @@ class FalunView: NSView {
 			setNeedsDisplay(bounds)
 		}
 	}
+	
+	enum ColorSchemeStar: String, CaseIterable {
+//		case white = "All White"
+//		case yellow = "All Yellow"
+//		case blue = "All pale Blue"
+		case random = "random"
+	}
+//	enum starSchemes: ColorSchemeStar {
+//		typealias RawValue = String
+//		
+//		case random = FalunView.ColorSchemeStar(rawValue: "random")
+//	}
+	
 	
 	var hourHandLength: Double { 0.263955343 }
 	var hourHandThickness: Double { 0.023125997 }
@@ -77,7 +90,7 @@ class FalunView: NSView {
 	override func draw(_ rect: NSRect) {
 		super.draw(rect)
 		
-		style.backgroundColor.setFill()
+//		backgroundColor.setFill()
 		NSBezierPath.fill(bounds)
 		
 //		drawFaceBackground()

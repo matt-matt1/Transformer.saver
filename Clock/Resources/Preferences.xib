@@ -99,10 +99,15 @@
                 <outlet property="labelYYSymbolRadius" destination="LLd-iX-Esc" id="LTx-Jk-99b"/>
                 <outlet property="labelYYSymbolStroke" destination="OcE-Ti-9Bo" id="PVH-3N-API"/>
                 <outlet property="labelYYSymbolStrokeWidth" destination="1ZG-bN-uXf" id="GJl-rv-mOo"/>
-                <outlet property="popupColorSchemeStar" destination="pxs-j7-m5c" id="TRA-py-5i5"/>
+                <outlet property="popupColorSchemeStar" destination="pxs-j7-m5c" id="IyC-SC-a3H"/>
                 <outlet property="popupOverrideColorScheme" destination="kZs-E2-rFZ" id="d5B-BG-wT3"/>
                 <outlet property="popupOverrideColorSchemeAction" destination="kZs-E2-rFZ" id="i9l-Qh-397"/>
                 <outlet property="stylePopUpButton" destination="Xyo-n3-1WN" id="J43-Wd-BWr"/>
+                <outlet property="tabItemBackground" destination="8KK-sJ-2zb" id="KdT-mh-u3R"/>
+                <outlet property="tabItemBase" destination="E6M-58-6bD" id="7Dy-7x-xpZ"/>
+                <outlet property="tabItemCenter" destination="maW-XP-6S7" id="8gq-jB-oco"/>
+                <outlet property="tabItemCurved" destination="85V-UQ-SDM" id="nf3-OT-7JA"/>
+                <outlet property="tabItemYinYang" destination="0d5-He-Rwp" id="O9q-Kk-gL1"/>
                 <outlet property="tabView" destination="eER-Kl-9JR" id="9tx-KL-xr7"/>
                 <outlet property="wellBackgroundColor" destination="cUh-H1-Y2e" id="qTC-J7-3cb"/>
                 <outlet property="wellBaseFillColor" destination="94g-xX-OPG" id="2xu-j9-cun"/>
@@ -711,7 +716,7 @@
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" id="J68-FM-7Un"/>
                                         </imageView>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KfP-iD-GaQ">
-                                            <rect key="frame" x="17" y="222" width="176" height="16"/>
+                                            <rect key="frame" x="5" y="222" width="188" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Center Symbol Corner Radius:" id="UiI-zu-umP">
                                                 <font key="font" metaFont="system"/>
@@ -769,7 +774,7 @@
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" id="QWh-ev-17c"/>
                                         </imageView>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ym-Qa-gAb">
-                                            <rect key="frame" x="17" y="170" width="176" height="16"/>
+                                            <rect key="frame" x="5" y="170" width="188" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Center Symbol Stroke Width:" id="vzH-Zm-BEN">
                                                 <font key="font" metaFont="system"/>
@@ -797,7 +802,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Jt-RN-V1q">
-                                            <rect key="frame" x="17" y="144" width="176" height="16"/>
+                                            <rect key="frame" x="5" y="144" width="188" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Center Symbol Stroke Color:" id="vlr-UE-fJV">
                                                 <font key="font" metaFont="system"/>
@@ -1253,7 +1258,7 @@
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" id="W3L-yf-la0"/>
                                         </imageView>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jNe-SP-gtJ">
-                                            <rect key="frame" x="17" y="51" width="176" height="16"/>
+                                            <rect key="frame" x="5" y="51" width="188" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Secondary Dot Stroke Width:" id="7Vg-fS-edg">
                                                 <font key="font" metaFont="system"/>
@@ -1289,7 +1294,7 @@
                                             </textFieldCell>
                                         </textField>
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cgx-Qt-HaH">
-                                            <rect key="frame" x="15" y="24" width="176" height="16"/>
+                                            <rect key="frame" x="5" y="24" width="186" height="16"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="right" title="Secondary Dot Stroke Color:" id="Fkg-dV-7yK">
                                                 <font key="font" metaFont="system"/>
