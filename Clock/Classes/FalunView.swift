@@ -13,20 +13,25 @@ class FalunView: NSView {
 	
 	// MARK: - Properties
 	
+	var basePosition = CGPoint.zero//(x: 100, y: 100)
+	var stars: [Star] = []
+	let log = NSTextField(frame: NSRect(x: 10, y: 10, width: 500, height: 500))
+//	let baseRadius: CGFloat = ((NSScreen.main) != nil) ? (NSScreen.main!.frame.height / 3) : Prefs.shared.baseRadius
+	
 	class var schemeName: String {
 		fatalError("Unimplemented")
 	}
 	
-	private var drawsLogo = false
-	private var drawsSeconds = true
-	
-	private var logoImage: NSImage?
+//	private var drawsLogo = false
+//	private var drawsSeconds = true
+//
+//	private var logoImage: NSImage?
 	
 	var clockFrame: CGRect {
 		return clockFrame(forBounds: bounds)
 	}
 	
-	var style: FalunStyle!
+//	var style: FalunStyle!
 	
 //	var styleName: String {
 //		set {}
@@ -36,9 +41,9 @@ class FalunView: NSView {
 //		}
 //	}
 	
-	class var styles: [FalunStyle] {
-		return []
-	}
+//	class var styles: [FalunStyle] {
+//		return []
+//	}
 	
 	override var frame: CGRect {
 		didSet {
@@ -59,15 +64,15 @@ class FalunView: NSView {
 //	}
 	
 	
-	var hourHandLength: Double { 0.263955343 }
-	var hourHandThickness: Double { 0.023125997 }
-	var minuteHandLength: Double { 0.391547049 }
-	var minuteHandThickness: Double { 0.014354067 }
-	var secondHandLength: Double { 0.391547049 }
-	var counterweightLength: Double { 0.076555024 }
-	var counterweightThickness: Double { 0.028708134 }
-	
-	var screwColor: NSColor { Color.black }
+//	var hourHandLength: Double { 0.263955343 }
+//	var hourHandThickness: Double { 0.023125997 }
+//	var minuteHandLength: Double { 0.391547049 }
+//	var minuteHandThickness: Double { 0.014354067 }
+//	var secondHandLength: Double { 0.391547049 }
+//	var counterweightLength: Double { 0.076555024 }
+//	var counterweightThickness: Double { 0.028708134 }
+//
+//	var screwColor: NSColor { Color.black }
 	
 	// MARK: - Initializers
 	
@@ -86,7 +91,7 @@ class FalunView: NSView {
 	}
 	
 	// MARK: - NSView
-	
+	/*
 	override func draw(_ rect: NSRect) {
 		super.draw(rect)
 		
@@ -104,7 +109,7 @@ class FalunView: NSView {
 //		drawComplications()
 //		drawHands()
 	}
-	
+	*/
 	// MARK: - Configuration
 	
 	func initialize() {
@@ -215,7 +220,7 @@ class FalunView: NSView {
 		path.line(to: end)
 		path.stroke()
 	}
-	
+	/*
 	func drawLogo(color: NSColor, width: CGFloat, y: CGFloat) {
 		if let image = logoImage {
 			let originalImageSize = image.size
@@ -243,7 +248,7 @@ class FalunView: NSView {
 			context.restoreGState()
 		}
 	}
-/*
+
 	func drawFaceBackground() {
 		style.faceColor.setFill()
 		
@@ -339,16 +344,16 @@ class FalunView: NSView {
 	// MARK: - Private
 	
 	@objc private func preferencesDidChange(_ notification: NSNotification?) {
-		drawsLogo = Preferences.shared.drawsLogo
-		drawsSeconds = Preferences.shared.drawsSeconds
-		
-		if drawsLogo {
-			if let imageURL = Bundle(for: ClockView.self).url(forResource: "braun", withExtension: "pdf") {
-				logoImage = NSImage(contentsOf: imageURL)
-			}
-		} else {
-			logoImage = nil
-		}
+//		drawsLogo = Preferences.shared.drawsLogo
+//		drawsSeconds = Preferences.shared.drawsSeconds
+//
+//		if drawsLogo {
+//			if let imageURL = Bundle(for: ClockView.self).url(forResource: "braun", withExtension: "pdf") {
+//				logoImage = NSImage(contentsOf: imageURL)
+//			}
+//		} else {
+//			logoImage = nil
+//		}
 		
 		setNeedsDisplay(bounds)
 	}

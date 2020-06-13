@@ -33,6 +33,8 @@ protocol FalunStyle/*: CustomStringConvertible*/ {
 	static var centerSymbolFill: NSColor { get }
 	static var centerSymbolStrokeWidth: Float { get }
 	static var centerSymbolStroke: NSColor { get }
+	static var centerSymbolThickness: Float { get }
+	static var curvedSymbolRadius: Float { get }
 	static var curvedSymbolThickness: Float { get }
 	static var curvedSymbolFill: NSColor { get }
 	static var curvedSymbolStrokeWidth: Float { get }

@@ -39,6 +39,15 @@
 		21EA959C197645D600E4370A /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EA95981976428A00E4370A /* MainView.swift */; };
 		21F358441977A2F00080C74A /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EA95A0197649BE00E4370A /* PreferencesWindowController.swift */; };
 		21F358741977A6960080C74A /* PreferencesWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21EA95A0197649BE00E4370A /* PreferencesWindowController.swift */; };
+		9FBB597A2495391500D278EA /* drawCurvedSwastika.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBB59742495391500D278EA /* drawCurvedSwastika.swift */; };
+		9FBB597B2495391500D278EA /* StarField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBB59752495391500D278EA /* StarField.swift */; };
+		9FBB597C2495391500D278EA /* drawTaiji.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBB59762495391500D278EA /* drawTaiji.swift */; };
+		9FBB597D2495391500D278EA /* Rays.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBB59772495391500D278EA /* Rays.swift */; };
+		9FBB597E2495391500D278EA /* drawDiscs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBB59782495391500D278EA /* drawDiscs.swift */; };
+		9FBB597F2495391500D278EA /* LargeSwastika.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBB59792495391500D278EA /* LargeSwastika.swift */; };
+		9FBB59812495392D00D278EA /* Lifecycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBB59802495392D00D278EA /* Lifecycle.swift */; };
+		9FBB598324953CC500D278EA /* Init.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBB598224953CC500D278EA /* Init.swift */; };
+		9FBB59872495431C00D278EA /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBB59862495431C00D278EA /* Star.swift */; };
 		9FCB4F08249403B900B45169 /* Cyan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCB4F07249403B900B45169 /* Cyan.swift */; };
 		9FCB4F0A249403D000B45169 /* custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCB4F09249403D000B45169 /* custom.swift */; };
 		9FCFDBCE2492882400486626 /* FalunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFDBCD2492882400486626 /* FalunView.swift */; };
@@ -80,6 +89,15 @@
 		21D784202066B04000A6C175 /* ClockStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockStyle.swift; sourceTree = "<group>"; };
 		21EA95981976428A00E4370A /* MainView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		21EA95A0197649BE00E4370A /* PreferencesWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreferencesWindowController.swift; sourceTree = "<group>"; };
+		9FBB59742495391500D278EA /* drawCurvedSwastika.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = drawCurvedSwastika.swift; sourceTree = "<group>"; };
+		9FBB59752495391500D278EA /* StarField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarField.swift; sourceTree = "<group>"; };
+		9FBB59762495391500D278EA /* drawTaiji.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = drawTaiji.swift; sourceTree = "<group>"; };
+		9FBB59772495391500D278EA /* Rays.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rays.swift; sourceTree = "<group>"; };
+		9FBB59782495391500D278EA /* drawDiscs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = drawDiscs.swift; sourceTree = "<group>"; };
+		9FBB59792495391500D278EA /* LargeSwastika.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LargeSwastika.swift; sourceTree = "<group>"; };
+		9FBB59802495392D00D278EA /* Lifecycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lifecycle.swift; sourceTree = "<group>"; };
+		9FBB598224953CC500D278EA /* Init.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Init.swift; sourceTree = "<group>"; };
+		9FBB59862495431C00D278EA /* Star.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		9FCB4F07249403B900B45169 /* Cyan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cyan.swift; sourceTree = "<group>"; };
 		9FCB4F09249403D000B45169 /* custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = custom.swift; sourceTree = "<group>"; };
 		9FCFDBCD2492882400486626 /* FalunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FalunView.swift; sourceTree = "<group>"; };
@@ -127,7 +145,9 @@
 		2156237418D0191800DF57B5 /* Clock */ = {
 			isa = PBXGroup;
 			children = (
+				9FBB59852495430E00D278EA /* Model */,
 				2156237518D0191800DF57B5 /* Classes */,
+				9FBB59732495391500D278EA /* Draw */,
 				2156237C18D0191800DF57B5 /* Resources */,
 			);
 			path = Clock;
@@ -139,6 +159,7 @@
 				21EA95981976428A00E4370A /* MainView.swift */,
 				9FCFDBCD2492882400486626 /* FalunView.swift */,
 				21D595F31A94694B00D29D3A /* ClockView.swift */,
+				9FBB598224953CC500D278EA /* Init.swift */,
 				2117D0651A96727A0051552F /* Models */,
 				21EA95A0197649BE00E4370A /* PreferencesWindowController.swift */,
 				9FCB4F062494039900B45169 /* Schemes */,
@@ -233,6 +254,28 @@
 				21623B3F19779F16001BA4A9 /* Images.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		9FBB59732495391500D278EA /* Draw */ = {
+			isa = PBXGroup;
+			children = (
+				9FBB59802495392D00D278EA /* Lifecycle.swift */,
+				9FBB59742495391500D278EA /* drawCurvedSwastika.swift */,
+				9FBB59752495391500D278EA /* StarField.swift */,
+				9FBB59762495391500D278EA /* drawTaiji.swift */,
+				9FBB59772495391500D278EA /* Rays.swift */,
+				9FBB59782495391500D278EA /* drawDiscs.swift */,
+				9FBB59792495391500D278EA /* LargeSwastika.swift */,
+			);
+			path = Draw;
+			sourceTree = "<group>";
+		};
+		9FBB59852495430E00D278EA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9FBB59862495431C00D278EA /* Star.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		9FCB4F062494039900B45169 /* Schemes */ = {
@@ -353,8 +396,12 @@
 			files = (
 				9FCB4F08249403B900B45169 /* Cyan.swift in Sources */,
 				9FCFDBD1249288CB00486626 /* OptionsWindowController.swift in Sources */,
+				9FBB59812495392D00D278EA /* Lifecycle.swift in Sources */,
+				9FBB597B2495391500D278EA /* StarField.swift in Sources */,
 				21D595F21A94693900D29D3A /* BN0032.swift in Sources */,
+				9FBB59872495431C00D278EA /* Star.swift in Sources */,
 				21D595F81A946E1900D29D3A /* Colors.swift in Sources */,
+				9FBB597C2495391500D278EA /* drawTaiji.swift in Sources */,
 				216F0AA31A969767005B946B /* BN0021.swift in Sources */,
 				9FCFDBD824928C0F00486626 /* Vibrant.swift in Sources */,
 				21F358741977A6960080C74A /* PreferencesWindowController.swift in Sources */,
@@ -363,10 +410,15 @@
 				2117D0641A9672600051552F /* BN0111.swift in Sources */,
 				21D784212066B04000A6C175 /* ClockStyle.swift in Sources */,
 				9FCFDBD4249289A400486626 /* Prefs.swift in Sources */,
+				9FBB597E2495391500D278EA /* drawDiscs.swift in Sources */,
 				21EA95991976428A00E4370A /* MainView.swift in Sources */,
 				9FCFDBCE2492882400486626 /* FalunView.swift in Sources */,
 				9FCB4F0A249403D000B45169 /* custom.swift in Sources */,
+				9FBB597D2495391500D278EA /* Rays.swift in Sources */,
+				9FBB597F2495391500D278EA /* LargeSwastika.swift in Sources */,
+				9FBB597A2495391500D278EA /* drawCurvedSwastika.swift in Sources */,
 				219E68F819782D5400805FEA /* Preferences.swift in Sources */,
+				9FBB598324953CC500D278EA /* Init.swift in Sources */,
 				216CECDB236E108900438890 /* BN0095.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

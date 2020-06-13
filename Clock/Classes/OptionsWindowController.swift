@@ -26,7 +26,6 @@ final class OptionsWindowController: NSWindowController, NSTabViewDelegate {
 	@IBOutlet weak var tabItemCenter: NSTabViewItem!
 	@IBOutlet weak var tabItemCurved: NSTabViewItem!
 	@IBOutlet weak var tabItemYinYang: NSTabViewItem!
-	//	@IBOutlet weak var stylePopUpButton: NSPopUpButton!
 	//background
 	@IBOutlet weak var labelBackgroundColor: NSTextField!
 	@IBOutlet weak var wellBackgroundColor: NSColorWell!
@@ -86,7 +85,13 @@ final class OptionsWindowController: NSWindowController, NSTabViewDelegate {
 	@IBOutlet weak var labelCenterSymbolStroke: NSTextField!
 	@IBOutlet weak var wellCenterSymbolStroke: NSColorWell!
 	@IBOutlet weak var defaultCenterSymbolStroke: NSImageView!
+	@IBOutlet weak var labelCenterSymbolThickness: NSTextField!
+	@IBOutlet weak var fieldCenterSymbolThickness: NSTextField!
+	@IBOutlet weak var defaultCenterSymbolThickness: NSTextField!
 	//curved
+	@IBOutlet weak var labelCurvedSymbolsRadius: NSTextField!
+	@IBOutlet weak var fieldCurvedSymbolsRadius: NSTextField!
+	@IBOutlet weak var defaultCurvedSymbolsRadius: NSTextField!
 	@IBOutlet weak var labelCurvedSymbolThickness: NSTextField!
 	@IBOutlet weak var fieldCurvedSymbolThickness: NSTextField!
 	@IBOutlet weak var defaultCurvedSymbolThickness: NSTextField!
@@ -140,19 +145,29 @@ final class OptionsWindowController: NSWindowController, NSTabViewDelegate {
 	//actions
 	@IBAction func popupOverrideColorSchemeAction(_ sender: Any) {
 //		preferences.schemeName = preferences.scheme.styles[popupOverrideColorScheme.indexOfSelectedItem].rawValue
-//		preferences.schemeName = popupOverrideColorScheme.itemTitles[popupOverrideColorScheme.indexOfSelectedItem]
-//		toggleTabs = preferences.schemeName == "custom"
+		preferences.schemeName = popupOverrideColorScheme.itemTitles[popupOverrideColorScheme.indexOfSelectedItem]
+		toggleTabs = preferences.schemeName == "custom"
 	}
 	//background
 	@IBAction func wellBackgroundColorAction(_ sender: Any) {
+//		FalunView.setNeedsDisplay(FalunView)
 	}
 	@IBAction func checkDisplayRays(_ sender: Any) {
 	}
 	@IBAction func stepNumStars(_ sender: Any) {
+		if let control = sender as? NSStepper {
+			fieldNumStars.integerValue += control.integerValue
+		}
 	}
 	@IBAction func stepMaxStarSize(_ sender: Any) {
+		if let control = sender as? NSStepper {
+			fieldMaxStarSize.floatValue += control.floatValue
+		}
 	}
 	@IBAction func stepThesholdStarSize(_ sender: Any) {
+		if let control = sender as? NSStepper {
+			fieldThesholdStarSize.floatValue += control.floatValue
+		}
 	}
 	@IBAction func popupColorSchemeStarAction(_ sender: Any) {
 //		preferences.starColorScheme = preferences.scheme.styles[popupColorSchemeStar.indexOfSelectedItem].rawValue
@@ -185,7 +200,11 @@ final class OptionsWindowController: NSWindowController, NSTabViewDelegate {
 	}
 	@IBAction func wellCenterSymbolStrokeAction(_ sender: Any) {
 	}
+	@IBAction func stepCenterSymbolThickness(_ sender: Any) {
+	}
 	//curved
+	@IBAction func stepCurvedSymbolsRadius(_ sender: Any) {
+	}
 	@IBAction func stepCurvedSymbolThickness(_ sender: Any) {
 	}
 	@IBAction func wellCurvedSymbolFillAction(_ sender: Any) {
@@ -280,55 +299,88 @@ final class OptionsWindowController: NSWindowController, NSTabViewDelegate {
 //	}
 	
 	func setDefaults() {
-//		defaultOverrideColorScheme = Vibrant.self.Style.default.colorScheme
-		defaultBackgroundColor.image?.backgroundColor = preferences.defaultScheme.setting.backgroundColor
+		defaultOverrideColorScheme.stringValue = preferences.defaultSchemeName
+		defaultBackgroundColor.wantsLayer = true
+		defaultBackgroundColor.layer?.backgroundColor = preferences.defaultScheme.setting.backgroundColor.cgColor
 		defaultDisplayRays.stringValue = preferences.defaultScheme.setting.displayRays ? "ON" : "OFF"
 		defaultNumStars.floatValue = preferences.defaultScheme.setting.numStars
 		defaultMaxStarSize.floatValue = preferences.defaultScheme.setting.maxStarSize
 		defaultThesholdStarSize.floatValue = preferences.defaultScheme.setting.thesholdStarSize
 		defaultColorSchemeStar.stringValue = preferences.defaultScheme.setting.starColorScheme
 		defaultBaseRadius.floatValue = preferences.defaultScheme.setting.baseRadius
-		defaultBaseFillColor.image?.backgroundColor = preferences.defaultScheme.setting.baseFillColor
+		defaultBaseFillColor.wantsLayer = true
+		defaultBaseFillColor.layer?.backgroundColor = preferences.defaultScheme.setting.baseFillColor.cgColor
 		defaultBaseStrokeWidth.floatValue = preferences.defaultScheme.setting.baseStrokeWidth
-		defaultBaseStrokeColor.image?.backgroundColor = preferences.defaultScheme.setting.baseStrokeColor
+		defaultBackgroundColor.wantsLayer = true
+		defaultBaseStrokeColor.layer?.backgroundColor = preferences.defaultScheme.setting.baseStrokeColor.cgColor
 		defaultBaseShadow.stringValue = preferences.defaultScheme.setting.baseShadow ? "ON" : "OFF"
 		defaultCenterDiscRadius.floatValue = preferences.defaultScheme.setting.centerDiscRadius
-		defaultCenterDiscFill.image?.backgroundColor = preferences.defaultScheme.setting.centerDiscFill
+		defaultCenterDiscFill.wantsLayer = true
+		defaultCenterDiscFill.layer?.backgroundColor = preferences.defaultScheme.setting.centerDiscFill.cgColor
 		defaultCenterDiscStrokeWidth.floatValue = preferences.defaultScheme.setting.centerDiscStrokeWidth
-		defaultCenterDiscStroke.image?.backgroundColor = preferences.defaultScheme.setting.centerDiscStroke
+		defaultCenterDiscStroke.wantsLayer = true
+		defaultCenterDiscStroke.layer?.backgroundColor = preferences.defaultScheme.setting.centerDiscStroke.cgColor
 		defaultCenterSymbolCornerRadius.floatValue = preferences.defaultScheme.setting.centerSymbolCornerRadius
-		defaultCenterSymbolFill.image?.backgroundColor = preferences.defaultScheme.setting.centerSymbolFill
+		defaultCenterSymbolFill.wantsLayer = true
+		defaultCenterSymbolFill.layer?.backgroundColor = preferences.defaultScheme.setting.centerSymbolFill.cgColor
 		defaultCenterSymbolStrokeWidth.floatValue = preferences.defaultScheme.setting.centerSymbolStrokeWidth
-		defaultCenterSymbolStroke.image?.backgroundColor = preferences.defaultScheme.setting.centerSymbolStroke
+		defaultCenterSymbolStroke.wantsLayer = true
+		defaultCenterSymbolStroke.layer?.backgroundColor = preferences.defaultScheme.setting.centerSymbolStroke.cgColor
+		defaultCenterSymbolThickness.floatValue = preferences.defaultScheme.setting.centerSymbolThickness
+		defaultCurvedSymbolsRadius.floatValue = preferences.defaultScheme.setting.curvedSymbolRadius
 		defaultCurvedSymbolThickness.floatValue = preferences.defaultScheme.setting.curvedSymbolThickness
-		defaultCurvedSymbolFill.image?.backgroundColor = preferences.defaultScheme.setting.curvedSymbolFill
+		defaultCurvedSymbolFill.wantsLayer = true
+		defaultCurvedSymbolFill.layer?.backgroundColor = preferences.defaultScheme.setting.curvedSymbolFill.cgColor
 		defaultCurvedSymbolStrokeWidth.floatValue = preferences.defaultScheme.setting.curvedSymbolStrokeWidth
-		defaultCurvedSymbolStroke.image?.backgroundColor = preferences.defaultScheme.setting.curvedSymbolStroke
+		defaultCurvedSymbolStroke.wantsLayer = true
+		defaultCurvedSymbolStroke.layer?.backgroundColor = preferences.defaultScheme.setting.curvedSymbolStroke.cgColor
 		defaultYYSymbolRadius.floatValue = preferences.defaultScheme.setting.yySymbolRadius
 		defaultYYSymbolStrokeWidth.floatValue = preferences.defaultScheme.setting.yySymbolStrokeWidth
-		defaultYYSymbolStroke.image?.backgroundColor = preferences.defaultScheme.setting.yySymbolStroke
-		defaultYYPriFill.image?.backgroundColor = preferences.defaultScheme.setting.yyPriFill
-		defaultYYSecFill.image?.backgroundColor = preferences.defaultScheme.setting.yySecFill
+		defaultYYSymbolStroke.wantsLayer = true
+		defaultYYSymbolStroke.layer?.backgroundColor = preferences.defaultScheme.setting.yySymbolStroke.cgColor
+		defaultYYPriFill.wantsLayer = true
+		defaultYYPriFill.layer?.backgroundColor = preferences.defaultScheme.setting.yyPriFill.cgColor
+		defaultYYSecFill.wantsLayer = true
+		defaultYYSecFill.layer?.backgroundColor = preferences.defaultScheme.setting.yySecFill.cgColor
 		defaultYYDotRadius.floatValue = preferences.defaultScheme.setting.yyDotRadius
-		defaultYYPriDotFill.image?.backgroundColor = preferences.defaultScheme.setting.yyPriDotFill
+		defaultYYPriDotFill.wantsLayer = true
+		defaultYYPriDotFill.layer?.backgroundColor = preferences.defaultScheme.setting.yyPriDotFill.cgColor
 		defaultYYPriDotStrokeWidth.floatValue = preferences.defaultScheme.setting.yyPriDotStrokeWidth
-		defaultYYPriDotStroke.image?.backgroundColor = preferences.defaultScheme.setting.yySecDotStroke
-		defaultYYSecDotFill.image?.backgroundColor = preferences.defaultScheme.setting.yySecDotFill
+		defaultYYPriDotStroke.wantsLayer = true
+		defaultYYPriDotStroke.layer?.backgroundColor = preferences.defaultScheme.setting.yySecDotStroke.cgColor
+		defaultYYSecDotFill.wantsLayer = true
+		defaultYYSecDotFill.layer?.backgroundColor = preferences.defaultScheme.setting.yySecDotFill.cgColor
 		defaultYYSecDotStrokeWidth.floatValue = preferences.defaultScheme.setting.yySecDotStrokeWidth
-		defaultYYSecDotStroke.image?.backgroundColor = preferences.defaultScheme.setting.yySecDotStroke
+		defaultYYSecDotStroke.wantsLayer = true
+		defaultYYSecDotStroke.layer?.backgroundColor = preferences.defaultScheme.setting.yySecDotStroke.cgColor
 	}
 	
 	func setValues() {
-		let optsOverrideColorScheme = preferences.schemes
+		popupOverrideColorScheme.removeAllItems()
+//		let optsOverrideColorScheme = preferences.schemes
+//		optsOverrideColorScheme.forEach { (item) in
+//			popupOverrideColorScheme.addItem(withTitle: item.schemeName)
+//		}
+		popupOverrideColorScheme.addItems(withTitles: preferences.schemeNames)
+//		popupOverrideColorScheme.addItems(withTitles: optsOverrideColorScheme.map { $0.schemeName })
 /*		let indexColorScheme = optsOverrideColorScheme.map { $0.schemeName }.firstIndex(of: preferences.schemeName) ?? optsOverrideColorScheme.startIndex
 //		let indexColorScheme = optsOverrideColorScheme.map { $0.rawValue }.firstIndex(of: preferences.schemeName) ?? optsOverrideColorScheme.startIndex
 		popupOverrideColorScheme.selectItem(at: indexColorScheme)*/
+//		let indexColorScheme = optsOverrideColorScheme.map { $0.schemeName }.firstIndex(of: preferences.schemeName) ?? optsOverrideColorScheme.startIndex
+//		popupOverrideColorScheme.selectItem(at: indexColorScheme)
 		wellBackgroundColor.color = preferences.backgroundColor
 		labelDisplayRays.state = preferences.displayRays ? NSControl.StateValue.on : NSControl.StateValue.off
 		fieldNumStars.floatValue = preferences.numStars
+//		fieldNumStars.intValue = Int32(preferences.numStars)
 		fieldMaxStarSize.floatValue = preferences.maxStarSize
 		fieldThesholdStarSize.floatValue = preferences.thesholdStarSize
 		popupColorSchemeStar.removeAllItems()
+//		let schemeNames = preferences.schemes.map { $0.schemeName }
+//		preferences.starSchemes.forEach { (scheme) in
+//			popupColorSchemeStar.addItem(withTitle: scheme.rawValue)
+//		}
+//		popupColorSchemeStar.addItems(withTitles: schemeNames/*(preferences.scheme.self).schemeName.setting.starColorSchemes*/)
+		popupColorSchemeStar.addItems(withTitles: Vibrant.setting.starColorSchemes)
 /*		let optsColorSchemeStar = preferences.scheme.ColorSchemeStar.allCases//Vibrant.ColorSchemeStar.allCases
 		popupColorSchemeStar.addItems(withTitles: optsColorSchemeStar.map({ $0.rawValue }))
 		let indexColorSchemeStar = optsColorSchemeStar.map { $0.rawValue }.firstIndex(of: preferences.starColorScheme) ?? optsColorSchemeStar.startIndex
@@ -347,6 +399,8 @@ final class OptionsWindowController: NSWindowController, NSTabViewDelegate {
 		wellCenterSymbolFill.color = preferences.centerSymbolFill
 		fieldCenterSymbolStrokeWidth.floatValue = preferences.centerSymbolStrokeWidth
 		wellCenterSymbolStroke.color = preferences.centerSymbolStroke
+		fieldCenterSymbolThickness.floatValue = preferences.centerSymbolThickness
+		fieldCurvedSymbolsRadius.floatValue = preferences.curvedSymbolRadius
 		fieldCurvedSymbolThickness.floatValue = preferences.curvedSymbolThickness
 		wellCurvedSymbolFill.color = preferences.curvedSymbolFill
 		fieldCurvedSymbolStrokeWidth.floatValue = preferences.curvedSymbolStrokeWidth
@@ -363,7 +417,6 @@ final class OptionsWindowController: NSWindowController, NSTabViewDelegate {
 		wellYYSecDotFill.color = preferences.yySecDotFill
 		fieldYYSecDotStrokeWidth.floatValue = preferences.yySecDotStrokeWidth
 		wellYYSecDotStroke.color = preferences.yySecDotStroke
-
 	}
 
 

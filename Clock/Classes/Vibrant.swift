@@ -28,24 +28,26 @@ class Vibrant: FalunView/*, FalunStyle*/ {
 		static var baseStrokeWidth: Float = 0
 		static var baseStrokeColor: NSColor = NSColor.clear
 		static var baseShadow: Bool = true
-		static var centerDiscRadius: Float = 0.5
+		static var centerDiscRadius: Float = 0.5//1/2
 		static var centerDiscFill: NSColor = NSColor.red
 		static var centerDiscStrokeWidth: Float = 0
 		static var centerDiscStroke: NSColor = NSColor.clear
-		static var centerSymbolCornerRadius: Float = 0.15
+		static var centerSymbolCornerRadius: Float = 0.02//1/45
+		static var centerSymbolThickness: Float = 0.125
 		static var centerSymbolFill: NSColor = NSColor.yellow
 		static var centerSymbolStrokeWidth: Float = 0
 		static var centerSymbolStroke: NSColor = NSColor.clear
-		static var curvedSymbolThickness: Float = 10
+		static var curvedSymbolThickness: Float = 0.28//1/20//10//as ratio=1/36
 		static var curvedSymbolFill: NSColor = NSColor.yellow
 		static var curvedSymbolStrokeWidth: Float = 0
 		static var curvedSymbolStroke: NSColor = NSColor.clear
-		static var yySymbolRadius: Float = 0.2
+		static var curvedSymbolRadius: Float = 0.25//1/4
+		static var yySymbolRadius: Float = 0.25//1/4
 		static var yySymbolStrokeWidth: Float = 0
 		static var yySymbolStroke: NSColor = NSColor.clear
 		static var yyPriFill: NSColor = NSColor.black
 		static var yySecFill: NSColor = NSColor.red
-		static var yyDotRadius: Float = 0.1
+		static var yyDotRadius: Float = 0.1//1/10
 		static var yyPriDotFill: NSColor = NSColor.white
 		static var yyPriDotStrokeWidth: Float = 0
 		static var yyPriDotStroke: NSColor = NSColor.clear
@@ -57,8 +59,9 @@ class Vibrant: FalunView/*, FalunStyle*/ {
 //		return FalunStyle.self
 //	}
 	
-	var rawValue: String = ""
-	
+//	var rawValue: String = "Vibrant"
+	var name: String = "Vibrant"
+
 	
 	// MARK: - Types
 	/*

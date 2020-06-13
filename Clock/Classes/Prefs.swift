@@ -39,6 +39,8 @@ final class Prefs: NSObject {
 		case centerSymbolFill = "Falun_centerSymbolFill"
 		case centerSymbolStrokeWidth = "Falun_centerSymbolStrokeWidth"
 		case centerSymbolStroke = "Falun_centerSymbolStroke"
+		case centerSymbolThickness = "Falun_centerSymbolThickness"
+		case curvedSymbolRadius = "Falun_curvedSymbolRadius"
 		case curvedSymbolThickness = "Falun_curvedSymbolThickness"
 		case curvedSymbolFill = "Falun_curvedSymbolFill"
 		case curvedSymbolStrokeWidth = "Falun_curvedSymbolStrokeWidth"
@@ -71,11 +73,11 @@ final class Prefs: NSObject {
 	/*private*/ let schemes = [
 //		"null"
 		Vibrant.self,
-//		Cyan.self,
-//		custom.self
+		Cyan.self,
+		custom.self
 	]
 	/*private*/ let defaultScheme = Vibrant.self
-//	/*private*/ let defaultScheme = "no"
+	/*private*/ let defaultSchemeName = "Vibrant"
 	var scheme: FalunView.Type {
 		return schemes.first { $0.schemeName == schemeName } ?? defaultScheme
 	}
@@ -89,11 +91,13 @@ final class Prefs: NSObject {
 			NotificationCenter.default.post(name: .ModelDidChange, object: scheme)
 		}
 	}
+	var schemeNames: [String] {
+		return ["Vibrant",
+			"Cyan",
+			"custom"]
+	}
 
 	var starSchemes: [FalunView.ColorSchemeStar] {
-//		let schemes = scheme.ColorSchemeStar
-//		let index = schemes.map { $0.rawValue }.firstIndex(of: schemeName) ?? schemes.startIndex
-//		return schemes[index]
 		return scheme.ColorSchemeStar.allCases
 	}
 
@@ -145,7 +149,7 @@ final class Prefs: NSObject {
 	}
 	var starColorScheme: String {
 		get {
-			return defaults.string(forKey: DefaultsKey.starColorScheme.key) ?? defaultScheme.setting.starColorScheme//defaultScheme.Style.default.starColorScheme
+			return defaults.string(forKey: DefaultsKey.starColorScheme.key) ?? defaultScheme.setting.starColorScheme //defaultScheme.Style.default.starColorScheme
 		}
 		set {
 			defaults.set(newValue, forKey: DefaultsKey.starColorScheme.key)
@@ -266,6 +270,24 @@ final class Prefs: NSObject {
 		}
 		set {
 			defaults.set(newValue, forKey: DefaultsKey.centerSymbolStroke.key)
+			save()
+		}
+	}
+	var centerSymbolThickness: Float {
+		get {
+			return defaults.float(forKey: DefaultsKey.centerSymbolThickness.key)
+		}
+		set {
+			defaults.set(newValue, forKey: DefaultsKey.centerSymbolThickness.key)
+			save()
+		}
+	}
+	var curvedSymbolRadius: Float {
+		get {
+			return defaults.float(forKey: DefaultsKey.curvedSymbolRadius.key)
+		}
+		set {
+			defaults.set(newValue, forKey: DefaultsKey.curvedSymbolRadius.key)
 			save()
 		}
 	}
@@ -443,6 +465,8 @@ final class Prefs: NSObject {
 			DefaultsKey.centerSymbolFill.key: defaultScheme.setting.centerSymbolFill,
 			DefaultsKey.centerSymbolStrokeWidth.key: defaultScheme.setting.centerSymbolStrokeWidth,
 			DefaultsKey.centerSymbolStroke.key: defaultScheme.setting.centerSymbolStroke,
+			DefaultsKey.centerSymbolThickness.key: defaultScheme.setting.centerSymbolThickness,
+			DefaultsKey.curvedSymbolRadius.key: defaultScheme.setting.curvedSymbolRadius,
 			DefaultsKey.curvedSymbolThickness.key: defaultScheme.setting.curvedSymbolThickness,
 			DefaultsKey.curvedSymbolFill.key: defaultScheme.setting.curvedSymbolFill,
 			DefaultsKey.curvedSymbolStrokeWidth.key: defaultScheme.setting.curvedSymbolStrokeWidth,

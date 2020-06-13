@@ -10,6 +10,8 @@ import Cocoa
 
 class custom: FalunView {
 	
+	var name: String = "custom"
+
 	struct setting: FalunStyle {
 		static var backgroundColor: NSColor = NSColor.purple
 		static var displayRays: Bool = true
@@ -31,6 +33,8 @@ class custom: FalunView {
 		static var centerSymbolFill: NSColor = NSColor.yellow
 		static var centerSymbolStrokeWidth: Float = 0
 		static var centerSymbolStroke: NSColor = NSColor.clear
+		static var centerSymbolThickness: Float = 0.125
+		static var curvedSymbolRadius: Float = 0.28
 		static var curvedSymbolThickness: Float = 10
 		static var curvedSymbolFill: NSColor = NSColor.yellow
 		static var curvedSymbolStrokeWidth: Float = 0
@@ -50,10 +54,10 @@ class custom: FalunView {
 	}
 
 	
-    override func draw(_ dirtyRect: NSRect) {
-        super.draw(dirtyRect)
-
-        // Drawing code here.
-    }
+//    override func draw(_ dirtyRect: NSRect) {
+//        super.draw(dirtyRect)
+//
+//        // Drawing code here.
+//    }
     
 }
