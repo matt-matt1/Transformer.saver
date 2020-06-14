@@ -14,6 +14,12 @@ extension FalunView {
 	// MARK: - Lifecycle
 	
 	override func draw(_ rect: NSRect) {
+		wantsLayer = true
+		layer?.backgroundColor = NSColor.red.cgColor
+		let path = NSBezierPath(ovalIn: NSRect(x: 100, y: 100, width: 300, height: 300))
+		NSColor.green.setFill()
+		path.fill()
+		/*
 //		drawStarField(fillColor: NSColor.white, strokeWidth: 0, strokeColor: NSColor.clear)
 //		drawStarField(fillColor: NSColor.white, strokeWidth: 1, strokeColor: NSColor.yellow)
 		drawStarField(fillColor: NSColor.white, strokeWidth: 1, strokeColor: NSColor.white)
@@ -35,7 +41,7 @@ extension FalunView {
 		
 		//		drawPaddle(color: innerCircleColor)
 		//		drawCenterDot(color: NSColor.green)
-
+*/
 	}
 
 

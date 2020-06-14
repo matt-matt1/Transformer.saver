@@ -14,9 +14,9 @@ protocol FalunStyle/*: CustomStringConvertible*/ {
 	
 	static var backgroundColor: NSColor { get }
 	static var displayRays: Bool { get }
-	static var numStars: Float { get }
+	static var numStars: Int { get }
 	static var maxStarSize: Float { get }
-	static var thesholdStarSize: Float { get }
+	static var thesholdStarSize: Int { get }
 	//	associatedtype SomeType: RawRepresentable //where SomeType.RawValue: StringProtocol
 	static var starColorSchemes: [String] { get }
 	static var starColorScheme: String { get }

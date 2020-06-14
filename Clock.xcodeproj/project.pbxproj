@@ -58,6 +58,8 @@
 		9FCFDBD824928C0F00486626 /* Vibrant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFDBD724928C0F00486626 /* Vibrant.swift */; };
 		9FCFDBDB24928E7D00486626 /* thumbnail.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FCFDBD924928E7D00486626 /* thumbnail.png */; };
 		9FCFDBDC24928E7D00486626 /* thumbnail@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9FCFDBDA24928E7D00486626 /* thumbnail@2x.png */; };
+		9FD18A042496709100DE1DF6 /* ExtendButtonBGColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD18A032496709100DE1DF6 /* ExtendButtonBGColor.swift */; };
+		9FD18A0624967BB400DE1DF6 /* FlatButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FD18A0524967BB400DE1DF6 /* FlatButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -108,6 +110,8 @@
 		9FCFDBD724928C0F00486626 /* Vibrant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibrant.swift; sourceTree = "<group>"; };
 		9FCFDBD924928E7D00486626 /* thumbnail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = thumbnail.png; sourceTree = "<group>"; };
 		9FCFDBDA24928E7D00486626 /* thumbnail@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "thumbnail@2x.png"; sourceTree = "<group>"; };
+		9FD18A032496709100DE1DF6 /* ExtendButtonBGColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtendButtonBGColor.swift; sourceTree = "<group>"; };
+		9FD18A0524967BB400DE1DF6 /* FlatButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +153,8 @@
 				2156237518D0191800DF57B5 /* Classes */,
 				9FBB59732495391500D278EA /* Draw */,
 				2156237C18D0191800DF57B5 /* Resources */,
+				9FD18A032496709100DE1DF6 /* ExtendButtonBGColor.swift */,
+				9FD18A0524967BB400DE1DF6 /* FlatButton.swift */,
 			);
 			path = Clock;
 			sourceTree = "<group>";
@@ -412,6 +418,7 @@
 				9FCFDBD4249289A400486626 /* Prefs.swift in Sources */,
 				9FBB597E2495391500D278EA /* drawDiscs.swift in Sources */,
 				21EA95991976428A00E4370A /* MainView.swift in Sources */,
+				9FD18A0624967BB400DE1DF6 /* FlatButton.swift in Sources */,
 				9FCFDBCE2492882400486626 /* FalunView.swift in Sources */,
 				9FCB4F0A249403D000B45169 /* custom.swift in Sources */,
 				9FBB597D2495391500D278EA /* Rays.swift in Sources */,
@@ -419,6 +426,7 @@
 				9FBB597A2495391500D278EA /* drawCurvedSwastika.swift in Sources */,
 				219E68F819782D5400805FEA /* Preferences.swift in Sources */,
 				9FBB598324953CC500D278EA /* Init.swift in Sources */,
+				9FD18A042496709100DE1DF6 /* ExtendButtonBGColor.swift in Sources */,
 				216CECDB236E108900438890 /* BN0095.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -67,7 +67,7 @@ final class Prefs: NSObject {
 	
 	static let shared = Prefs()
 	
-	private let defaults: UserDefaults = ScreenSaverDefaults(
+	/*private*/ let defaults: UserDefaults = ScreenSaverDefaults(
 		forModuleWithName: Bundle(for: Prefs.self).bundleIdentifier!)!
 	
 	/*private*/ let schemes = [
@@ -120,9 +120,9 @@ final class Prefs: NSObject {
 			save()
 		}
 	}
-	var numStars: Float {
+	var numStars: Int {
 		get {
-			return defaults.float(forKey: DefaultsKey.numStars.key)
+			return defaults.integer(forKey: DefaultsKey.numStars.key)
 		}
 		set {
 			defaults.set(newValue, forKey: DefaultsKey.numStars.key)
@@ -138,9 +138,9 @@ final class Prefs: NSObject {
 			save()
 		}
 	}
-	var thesholdStarSize: Float {
+	var thesholdStarSize: Int {
 		get {
-			return defaults.float(forKey: DefaultsKey.thesholdStarSize.key)
+			return defaults.integer(forKey: DefaultsKey.thesholdStarSize.key)
 		}
 		set {
 			defaults.set(newValue, forKey: DefaultsKey.thesholdStarSize.key)

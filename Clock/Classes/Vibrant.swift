@@ -18,9 +18,9 @@ class Vibrant: FalunView/*, FalunStyle*/ {
 		
 		static var backgroundColor: NSColor = NSColor.purple
 		static var displayRays: Bool = true
-		static var numStars: Float = 400
+		static var numStars: Int = 400
 		static var maxStarSize: Float = 20
-		static var thesholdStarSize: Float = 6
+		static var thesholdStarSize: Int = 6
 		static var starColorSchemes: [String] = ["All White", "All Yellow", "All Pale Blue", "random", "Blues"]
 		static var starColorScheme: String = "random"
 		static var baseRadius: Float = 360
