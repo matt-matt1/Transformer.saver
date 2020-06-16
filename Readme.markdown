@@ -1,10 +1,10 @@
-# Clock.saver
+# Transformer.saver
 
-Just a little Mac screensaver inspired by the [Braun watches](http://braun-clocks.com/watches). You pick a model and style. Here’s a screenshot:
+Just a little Mac screensaver inspired by [Falun Dafa](http://falundafa.org).  Here’s a screenshot:
 
-[<img src="https://cdn.dribbble.com/users/1573/screenshots/1460483/clock.png" width="400" alt="Clock Saver Screenshot">](http://dribbble.com/shots/1460483-Clock-Screensaver)
+<img src="https://github.com/matt-matt1/Transformer.saver/blob/master/Clock/Resources/thumbnail%402x.png" width="400" alt="Falun Saver Screenshot">
 
-
+<!--
 ## Installation
 
 **[Download the latest release](https://github.com/soffes/clock-saver/releases).** Unzip and double-click.
@@ -48,3 +48,4 @@ The following models are implemented:
 Eventually, I'd love to have them all implemented. Here's my [progress](Coverage.markdown).
 
 Enjoy.
+-->
