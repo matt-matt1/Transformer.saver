@@ -100,10 +100,13 @@ final class MainView: ScreenSaverView {
 	@objc private func preferencesDidChange(_ notification: NSNotification?) {
 //		let preferences = (notification?.object as? Prefs) ?? Prefs()
 //		wantsLayer = true
-		layer?.backgroundColor = NSColor.red.cgColor
+/*		layer?.backgroundColor = NSColor.red.cgColor
 		let path = NSBezierPath(ovalIn: NSRect(x: 100, y: 100, width: 300, height: 300))
 		NSColor.green.setFill()
-		path.fill()
+		path.fill()*/
+//		let view = preferences.scheme.init(frame: bounds)
+//		myView = view
+		myView = FalunView(frame: bounds)
 //		let view = preferences.model.init(frame: bounds)
 //		view.styleName = preferences.styleName
 //		myView = view

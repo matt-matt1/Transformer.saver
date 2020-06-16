@@ -50,6 +50,8 @@
 		9FBB59872495431C00D278EA /* Star.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FBB59862495431C00D278EA /* Star.swift */; };
 		9FCB4F08249403B900B45169 /* Cyan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCB4F07249403B900B45169 /* Cyan.swift */; };
 		9FCB4F0A249403D000B45169 /* custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCB4F09249403D000B45169 /* custom.swift */; };
+		9FCD2BD4249910200050200E /* LiveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCD2BD3249910200050200E /* LiveView.swift */; };
+		9FCD2BD6249910670050200E /* YinYangView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCD2BD5249910670050200E /* YinYangView.swift */; };
 		9FCFDBCE2492882400486626 /* FalunView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFDBCD2492882400486626 /* FalunView.swift */; };
 		9FCFDBD1249288CB00486626 /* OptionsWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FCFDBCF249288CB00486626 /* OptionsWindowController.swift */; };
 		9FCFDBD2249288CB00486626 /* Options.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9FCFDBD0249288CB00486626 /* Options.xib */; };
@@ -102,6 +104,8 @@
 		9FBB59862495431C00D278EA /* Star.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Star.swift; sourceTree = "<group>"; };
 		9FCB4F07249403B900B45169 /* Cyan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cyan.swift; sourceTree = "<group>"; };
 		9FCB4F09249403D000B45169 /* custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = custom.swift; sourceTree = "<group>"; };
+		9FCD2BD3249910200050200E /* LiveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiveView.swift; sourceTree = "<group>"; };
+		9FCD2BD5249910670050200E /* YinYangView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YinYangView.swift; sourceTree = "<group>"; };
 		9FCFDBCD2492882400486626 /* FalunView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FalunView.swift; sourceTree = "<group>"; };
 		9FCFDBCF249288CB00486626 /* OptionsWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsWindowController.swift; sourceTree = "<group>"; };
 		9FCFDBD0249288CB00486626 /* Options.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Options.xib; sourceTree = "<group>"; };
@@ -155,6 +159,8 @@
 				2156237C18D0191800DF57B5 /* Resources */,
 				9FD18A032496709100DE1DF6 /* ExtendButtonBGColor.swift */,
 				9FD18A0524967BB400DE1DF6 /* FlatButton.swift */,
+				9FCD2BD3249910200050200E /* LiveView.swift */,
+				9FCD2BD5249910670050200E /* YinYangView.swift */,
 			);
 			path = Clock;
 			sourceTree = "<group>";
@@ -418,11 +424,13 @@
 				9FCFDBD4249289A400486626 /* Prefs.swift in Sources */,
 				9FBB597E2495391500D278EA /* drawDiscs.swift in Sources */,
 				21EA95991976428A00E4370A /* MainView.swift in Sources */,
+				9FCD2BD4249910200050200E /* LiveView.swift in Sources */,
 				9FD18A0624967BB400DE1DF6 /* FlatButton.swift in Sources */,
 				9FCFDBCE2492882400486626 /* FalunView.swift in Sources */,
 				9FCB4F0A249403D000B45169 /* custom.swift in Sources */,
 				9FBB597D2495391500D278EA /* Rays.swift in Sources */,
 				9FBB597F2495391500D278EA /* LargeSwastika.swift in Sources */,
+				9FCD2BD6249910670050200E /* YinYangView.swift in Sources */,
 				9FBB597A2495391500D278EA /* drawCurvedSwastika.swift in Sources */,
 				219E68F819782D5400805FEA /* Preferences.swift in Sources */,
 				9FBB598324953CC500D278EA /* Init.swift in Sources */,
